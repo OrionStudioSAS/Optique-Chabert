@@ -151,7 +151,7 @@ img { display: block; max-width: 100%; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('Optique Chabert Homepage.png');
+  background-image: url('../images/hero.png');
   background-size: cover;
   background-position: center top;
   transform: scale(1.04); /* léger zoom pour parallaxe JS */
@@ -272,10 +272,10 @@ img { display: block; max-width: 100%; }
   transform: scale(1.04);
 }
 
-.service-bg--1 { background-image: url('Sante visuelle.png'); }
-.service-bg--2 { background-image: url('lentille de nuit.png'); }
-.service-bg--3 { background-image: url('basse vision.png'); }
-.service-bg--4 { background-image: url('Sante visuelle.png'); }
+.service-bg--1 { background-image: url('../images/sante-visuelle.png'); }
+.service-bg--2 { background-image: url('../images/lentille-de-nuit.png'); }
+.service-bg--3 { background-image: url('../images/basse-vision.png'); }
+.service-bg--4 { background-image: url('../images/sante-visuelle.png'); }
 
 /* Overlay gradient + contenu texte */
 .service-overlay {
@@ -763,7 +763,7 @@ a.contact-value:hover { opacity: 0.6; }
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background-image: url('footer.png');
+  background-image: url('../images/footer.png');
   background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;
