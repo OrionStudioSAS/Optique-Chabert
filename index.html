@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Optique Chabert — Depuis 1969</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ── HEADER ──────────────────────────────────────────────── -->
+  <header id="site-header">
+    <nav class="nav nav--left">
+      <a href="#boutique">La boutique</a>
+      <a href="#services">Services</a>
+      <a href="#histoire">Qui sommes nous ?</a>
+    </nav>
+
+    <a href="/" class="header-logo" aria-label="Optique Chabert — accueil">
+      <img src="Logo Optique Chabert.png" alt="Optique Chabert">
+    </a>
+
+    <nav class="nav nav--right">
+      <a href="#contact">Nous contacter</a>
+      <a href="#rdv" class="nav-rdv">Prendre rendez-vous</a>
+    </nav>
+  </header>
+
+  <!-- ── HERO ────────────────────────────────────────────────── -->
+  <section id="hero">
+    <!--
+      Remplacer par votre image : background-image: url('hero.jpg')
+      Image recommandée : la photo de la vitrine à travers les lunettes géantes
+    -->
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+
+    <!-- Grand logo centré dans le hero, disparaît au scroll -->
+    <div class="hero-logo" aria-hidden="true">
+      <img src="Logo Optique Chabert.png" alt="">
+    </div>
+
+    <!-- Texte bas gauche -->
+    <div class="hero-content" id="boutique">
+      <h1>La boutique</h1>
+      <p>
+        Montures sélectionnées pour leur caractère —<br>
+        du classique intemporel aux pièces les plus audacieuses.<br>
+        <em>Made in France &amp; Japan.</em>
+      </p>
+      <a href="#boutique" class="btn">Découvrir la boutique</a>
+    </div>
+  </section>
+
+  <!-- ── SERVICES — SCROLL HORIZONTAL ───────────────────────── -->
+  <!--
+    Hauteur = 100vh (sticky) + 100vw (distance de défilement horizontal)
+    → le scroll vertical pilote la translation horizontale, pixel pour pixel
+  -->
+  <div id="services-wrapper">
+    <div id="services-sticky">
+      <div id="services-track">
+
+        <article class="service-card">
+          <!-- Remplacer par image réelle → background-image: url('sante-visuelle.jpg') -->
+          <div class="service-bg service-bg--1"></div>
+          <div class="service-overlay">
+            <h3>Santé visuelle</h3>
+            <p>Bilan visuel complet sur rendez-vous, sans engagement d'achat. On prend le temps, on explique tout.</p>
+            <div class="service-actions">
+              <a href="#" class="btn btn--sm">En savoir plus</a>
+              <a href="#rdv" class="btn btn--sm">Prendre rendez-vous</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <!-- Remplacer → url('lentilles-nuit.jpg') -->
+          <div class="service-bg service-bg--2"></div>
+          <div class="service-overlay">
+            <h3>Lentilles de nuit</h3>
+            <p>Vous portez des lentilles la nuit pour voir parfaitement la journée sans correction. Rare en France, Chabert en est spécialiste.</p>
+            <div class="service-actions">
+              <a href="#" class="btn btn--sm">En savoir plus</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <!-- Remplacer → url('basse-vision.jpg') -->
+          <div class="service-bg service-bg--3"></div>
+          <div class="service-overlay">
+            <h3>Basse vision &amp; vision de l'enfant</h3>
+            <p>Prise en charge des déficiences visuelles sévères et suivi spécialisé de l'enfant, de la détection à l'équipement.</p>
+            <div class="service-actions">
+              <a href="#" class="btn btn--sm">En savoir plus</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <!-- Remplacer → url('montures.jpg') -->
+          <div class="service-bg service-bg--4"></div>
+          <div class="service-overlay">
+            <h3>Montures &amp; solaires</h3>
+            <p>Une sélection issue des plus belles manufactures françaises et japonaises — pour chaque style, chaque visage.</p>
+            <div class="service-actions">
+              <a href="#boutique" class="btn btn--sm">Découvrir</a>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /services-track -->
+    </div><!-- /services-sticky -->
+  </div><!-- /services-wrapper -->
+
+  <!-- ── NOTRE HISTOIRE ──────────────────────────────────────── -->
+  <section id="histoire">
+
+    <!-- Colonne gauche : image sticky qui change au scroll -->
+    <div class="histoire-img-col">
+      <div class="histoire-img-wrap">
+        <img class="histoire-img histoire-img--active" src="Notre histoire.png"   alt="Notre histoire">
+        <img class="histoire-img"                      src="Sante visuelle.png"   alt="1969">
+        <img class="histoire-img"                      src="lentille de nuit.png" alt="1980">
+        <img class="histoire-img"                      src="basse vision.png"     alt="Aujourd'hui">
+      </div>
+    </div>
+
+    <!-- Colonne droite : frise chronologique -->
+    <div class="histoire-content-col">
+      <div class="histoire-timeline">
+
+        <div class="histoire-step" data-img="0">
+          <div class="step-mark"><div class="step-dot"></div></div>
+          <div class="step-body">
+            <h2>Notre histoire</h2>
+            <p class="histoire-address">Le 28 rue Arson, à Nice.</p>
+            <p class="histoire-intro">
+              Forte d'une expertise approfondie en optique et d'un regard moderne sur le métier,
+              Élodie sélectionne chaque monture avec exigence et accompagne chaque client avec
+              précision. Son approche mêle technicité, esthétique et expérience personnalisée.
+            </p>
+          </div>
+        </div>
+
+        <div class="histoire-step" data-img="1">
+          <div class="step-mark"><div class="step-dot"></div></div>
+          <div class="step-body">
+            <span class="histoire-year">1969</span>
+            <p>Fondateur d'Optique Chabert, Guy Chabert pose les bases d'un savoir-faire exigeant et d'une relation client fondée sur la confiance. Visionnaire, il développe une optique de proximité, alliant précision technique et sens du détail.</p>
+          </div>
+        </div>
+
+        <div class="histoire-step" data-img="2">
+          <div class="step-mark"><div class="step-dot"></div></div>
+          <div class="step-body">
+            <span class="histoire-year">1980</span>
+            <p>Bernard Chabert reprend le flambeau et fait évoluer la maison. Il modernise l'offre, développe la sélection de montures et affirme l'identité de l'enseigne, tout en conservant l'exigence et l'esprit familial qui font sa réputation.</p>
+          </div>
+        </div>
+
+        <div class="histoire-step" data-img="3">
+          <div class="step-mark"><div class="step-dot"></div></div>
+          <div class="step-body">
+            <span class="histoire-year histoire-year--today">Aujourd'hui</span>
+            <p>Une nouvelle génération s'inscrit dans l'histoire. Élodie Julliot reprend Optique Chabert avec une vision contemporaine : allier tradition, expertise et innovation pour répondre aux attentes d'aujourd'hui.</p>
+          </div>
+        </div>
+
+      </div><!-- /histoire-timeline -->
+    </div><!-- /histoire-content-col -->
+  </section>
+
+  <!-- ── AVIS CLIENTS ───────────────────────────────────────── -->
+  <section id="avis">
+    <div class="avis-header">
+      <h2>Ce que disent nos clients</h2>
+      <a href="https://maps.google.com/?q=Optique+Chabert+28+Rue+Arson+Nice" target="_blank" rel="noopener" class="btn btn--dark">Voir tous les avis</a>
+    </div>
+
+    <div class="avis-grid">
+
+      <article class="avis-card">
+        <div class="avis-stars">★★★★★</div>
+        <p>« Un accueil exceptionnel et des conseils vraiment personnalisés. Élodie prend le temps d'expliquer chaque détail — on repart avec des lunettes qui nous ressemblent vraiment. »</p>
+        <span class="avis-author">Sophie M.</span>
+      </article>
+
+      <article class="avis-card">
+        <div class="avis-stars">★★★★★</div>
+        <p>« Spécialiste des lentilles de nuit, Optique Chabert m'a changé la vie. Plus besoin de correction en journée. Un suivi sérieux et bienveillant depuis le début. »</p>
+        <span class="avis-author">Thomas R.</span>
+      </article>
+
+      <article class="avis-card">
+        <div class="avis-stars">★★★★★</div>
+        <p>« La sélection de montures est unique à Nice — des pièces introuvables ailleurs, françaises et japonaises. On sent immédiatement la passion du métier. »</p>
+        <span class="avis-author">Camille D.</span>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ── NOUS CONTACTER ─────────────────────────────────────── -->
+  <section id="contact">
+
+    <!-- Colonne gauche : infos -->
+    <div class="contact-info">
+
+      <h2>Nous contacter</h2>
+
+      <div class="contact-block">
+        <span class="contact-label">Téléphone</span>
+        <a href="tel:+33493894694" class="contact-value">+33 4 93 89 46 94</a>
+      </div>
+
+      <div class="contact-block">
+        <span class="contact-label">Email</span>
+        <a href="mailto:contact@optique-chabert.com" class="contact-value">contact@optique-chabert.com</a>
+      </div>
+
+      <div class="contact-block">
+        <span class="contact-label">Adresse</span>
+        <span class="contact-value">28 Rue Arson<br>06400 Nice, France</span>
+        <a href="https://maps.google.com/?q=28+Rue+Arson+Nice+06400+France" target="_blank" rel="noopener" class="btn btn--sm contact-maps-btn">Voir sur Google Maps</a>
+      </div>
+
+      <div class="contact-block">
+        <span class="contact-label">Nos horaires</span>
+        <div class="contact-value contact-hours">
+          <div class="hours-row"><span>Lundi</span><span>Fermé</span></div>
+          <div class="hours-row"><span>Mar – Ven</span><span>9h30 – 19h00</span></div>
+          <div class="hours-row"><span>Samedi</span><span>9h30 – 18h00</span></div>
+          <div class="hours-row"><span>Dimanche</span><span>Fermé</span></div>
+        </div>
+      </div>
+
+      <div class="contact-block">
+        <span class="contact-label">Suivez-nous</span>
+        <a href="https://www.instagram.com/optique.chabert" target="_blank" rel="noopener" class="contact-instagram" aria-label="Instagram Optique Chabert">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5"/>
+            <circle cx="12" cy="12" r="4.5"/>
+            <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+          </svg>
+          <span>@optique.chabert</span>
+        </a>
+      </div>
+
+    </div><!-- /contact-info -->
+
+    <!-- Colonne droite : carte OpenStreetMap -->
+    <div class="contact-map">
+      <iframe
+        title="Optique Chabert — 28 Rue Arson, Nice"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=7.254%2C43.708%2C7.270%2C43.714&amp;layer=mapnik&amp;marker=43.7102%2C7.2618"
+        loading="lazy"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+  </section>
+
+  <!-- ── FOOTER ──────────────────────────────────────────────── -->
+  <footer id="footer">
+
+    <!-- Bande nav -->
+    <div class="footer-nav-bar">
+      <div class="footer-left">
+        <img class="footer-logo" src="Logo Optique Chabert.png" alt="Optique Chabert">
+        <span class="footer-address-name">&#9737; Optique Chabert</span>
+        <span class="footer-address-detail">28 Rue Arson,<br>Nice 06400, France</span>
+      </div>
+
+      <nav class="footer-cols">
+        <div class="footer-col">
+          <a href="#boutique">La boutique</a>
+          <a href="#services">Nos services</a>
+          <a href="#histoire">Notre histoire</a>
+        </div>
+        <div class="footer-col">
+          <a href="https://www.instagram.com/optique.chabert" target="_blank" rel="noopener">Instagram</a>
+        </div>
+        <div class="footer-col">
+          <a href="#">Mentions légales</a>
+          <a href="#">CGV</a>
+        </div>
+        <div class="footer-col">
+          <a href="#contact">Nous contacter</a>
+          <a href="#rdv">Prendre rendez-vous</a>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-copy">
+      &copy; 2025 Optique Chabert &ndash; Tous droits réservés &ndash; Site by <a href="https://orion-studio.io" target="_blank" rel="noopener">Orion Studio</a>
+    </div>
+
+    <!-- Grand bloc statement -->
+    <div class="footer-statement">
+      <div class="footer-statement-text">
+        <span class="footer-big-name">Optique Chabert</span>
+        <span class="footer-big-since">Depuis 1969</span>
+      </div>
+    </div>
+
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
