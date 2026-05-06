@@ -260,6 +260,13 @@ img { display: block; max-width: 100%; }
   overflow: hidden;
 }
 
+/* Lien couvrant toute la carte */
+.card-link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
 .service-bg {
   position: absolute;
   inset: 0;
@@ -277,10 +284,11 @@ img { display: block; max-width: 100%; }
 .service-bg--3 { background-image: url('../images/basse-vision.png'); }
 .service-bg--4 { background-image: url('../images/sante-visuelle.png'); }
 
-/* Overlay gradient + contenu texte */
+/* Overlay au-dessus du lien carte */
 .service-overlay {
   position: absolute;
   inset: 0;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -793,4 +801,177 @@ a.contact-value:hover { opacity: 0.6; }
   color: var(--dark);
   letter-spacing: 0.05em;
   margin-top: 14px;
+}
+
+
+/* ── PAGES SERVICE ─────────────────────────────────────────── */
+
+/* Hero court (60vh) réutilisé sur les pages service */
+.service-hero {
+  position: relative;
+  height: 70vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.service-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.04);
+}
+
+.service-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.1) 60%, transparent 100%);
+}
+
+.service-hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  padding: 0 60px 56px;
+}
+
+.service-hero-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 16px;
+}
+
+.service-hero-breadcrumb a { color: white; }
+.service-hero-breadcrumb a:hover { opacity: 0.7; }
+.service-hero-breadcrumb span { opacity: 0.5; }
+
+.service-hero-content h1 {
+  font-size: clamp(36px, 6vw, 80px);
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.service-hero-content p {
+  font-size: 15px;
+  font-weight: 300;
+  opacity: 0.88;
+  max-width: 520px;
+  line-height: 1.7;
+}
+
+/* Corps de la page service */
+.service-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 70vh;
+}
+
+.service-body-left {
+  padding: clamp(60px, 7vw, 100px) clamp(40px, 5vw, 80px);
+  border-right: 1px solid #ece8e3;
+}
+
+.service-body-left h2 {
+  font-size: clamp(22px, 2.8vw, 36px);
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+.service-body-left p {
+  font-size: 14px;
+  line-height: 1.85;
+  color: var(--mid);
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.service-body-right {
+  padding: clamp(60px, 7vw, 100px) clamp(40px, 5vw, 80px);
+  background: #faf8f5;
+}
+
+.service-detail-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.service-detail-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.service-detail-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--mid);
+  font-weight: 300;
+}
+
+.service-detail-list li::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+
+/* CTA bloc */
+.service-cta {
+  padding: clamp(60px, 7vw, 100px) clamp(40px, 5vw, 80px);
+  background: var(--dark);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.service-cta h2 {
+  font-size: clamp(22px, 3vw, 42px);
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.service-cta p {
+  font-size: 14px;
+  font-weight: 300;
+  opacity: 0.7;
+  margin-top: 10px;
+  max-width: 480px;
+  line-height: 1.7;
+}
+
+.btn--white {
+  color: white;
+  border-color: rgba(255,255,255,0.6);
+}
+
+.btn--white:hover {
+  background: white;
+  color: var(--dark);
 }

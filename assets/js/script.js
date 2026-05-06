@@ -6,22 +6,18 @@
 
   function updateHeader() {
     const y = window.scrollY;
-
-    // Blur + couleur du header après 80px de scroll
     header.classList.toggle('scrolled', y > 80);
 
-    // Grand logo hero : disparaît sur les 280 premiers px
-    const heroFade = Math.max(0, 1 - y / 280);
-    heroLogo.style.opacity = heroFade;
-
-    // Parallaxe léger sur le fond hero
-    if (y < window.innerHeight) {
+    if (heroLogo) {
+      heroLogo.style.opacity = Math.max(0, 1 - y / 280);
+    }
+    if (heroBg && y < window.innerHeight) {
       heroBg.style.transform = `scale(1.04) translateY(${y * 0.18}px)`;
     }
   }
 
   window.addEventListener('scroll', updateHeader, { passive: true });
-  updateHeader(); // état initial
+  updateHeader();
 })();
 
 
