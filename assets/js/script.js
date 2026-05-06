@@ -56,21 +56,22 @@
   if (!wrapper || !track) return;
 
   function updateServicesScroll() {
-    const wrapperTop    = wrapper.getBoundingClientRect().top;
-    const scrolledIn    = -wrapperTop;                           // px scrollés dans le wrapper
-    const maxScroll     = wrapper.offsetHeight - window.innerHeight; // distance max
+    const wrapperTop   = wrapper.getBoundingClientRect().top;
+    const scrolledIn   = -wrapperTop;
+    const maxScroll    = wrapper.offsetHeight - window.innerHeight;
+    const maxTranslate = track.scrollWidth - window.innerWidth;
 
     if (scrolledIn <= 0) {
       track.style.transform = 'translateX(0)';
       return;
     }
     if (scrolledIn >= maxScroll) {
-      track.style.transform = `translateX(-${maxScroll}px)`;
+      track.style.transform = `translateX(-${maxTranslate}px)`;
       return;
     }
 
-    // 1 px vertical = 1 px horizontal → défilement naturel
-    track.style.transform = `translateX(-${scrolledIn}px)`;
+    const progress = scrolledIn / maxScroll;
+    track.style.transform = `translateX(-${progress * maxTranslate}px)`;
   }
 
   window.addEventListener('scroll', updateServicesScroll, { passive: true });

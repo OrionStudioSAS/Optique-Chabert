@@ -222,7 +222,16 @@ img { display: block; max-width: 100%; }
 
 .hero-content .btn {
   color: white;
-  border-color: rgba(255,255,255,0.7);
+  border-color: rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.hero-content .btn:hover {
+  background: rgba(255,255,255,0.9);
+  color: var(--dark);
+  border-color: transparent;
 }
 
 
@@ -235,7 +244,8 @@ img { display: block; max-width: 100%; }
 */
 #services-wrapper {
   position: relative;
-  height: calc(100vh - var(--header-h) + 100vw);
+  margin-top: 4px;
+  height: calc(100vh - var(--header-h) + 100vw + 12px); /* 12px = 3 gaps × 4px */
 }
 
 #services-sticky {
@@ -249,6 +259,7 @@ img { display: block; max-width: 100%; }
 
 #services-track {
   display: flex;
+  gap: 4px;
   will-change: transform;
 }
 
@@ -328,13 +339,16 @@ img { display: block; max-width: 100%; }
 
 .service-actions .btn {
   color: white;
-  border-color: rgba(255,255,255,0.6);
+  border-color: rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .service-actions .btn:hover {
-  background: white;
+  background: rgba(255,255,255,0.9);
   color: var(--dark);
-  border-color: white;
+  border-color: transparent;
 }
 
 
