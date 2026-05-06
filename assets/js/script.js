@@ -77,3 +77,48 @@
   window.addEventListener('scroll', updateServicesScroll, { passive: true });
   updateServicesScroll(); // état initial
 })();
+
+
+/* ── BURGER MENU ────────────────────────────────────────────── */
+(function () {
+  const btn = document.getElementById('burger-btn');
+  const nav = document.getElementById('mobile-nav');
+  if (!btn || !nav) return;
+
+  function close() {
+    btn.classList.remove('open');
+    nav.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+    nav.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  btn.addEventListener('click', () => {
+    const open = btn.classList.toggle('open');
+    nav.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', String(open));
+    nav.setAttribute('aria-hidden', String(!open));
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+})();
+
+
+/* ── MEGA MENU HOVER ────────────────────────────────────────── */
+(function () {
+  const trigger = document.querySelector('.nav-services-trigger');
+  const menu    = document.getElementById('mega-menu');
+  if (!trigger || !menu) return;
+
+  let timeout;
+  const show = () => { clearTimeout(timeout); menu.classList.add('visible'); };
+  const hide = () => { timeout = setTimeout(() => menu.classList.remove('visible'), 200); };
+
+  trigger.addEventListener('mouseenter', show);
+  trigger.addEventListener('mouseleave', hide);
+  menu.addEventListener('mouseenter', show);
+  menu.addEventListener('mouseleave', hide);
+})();

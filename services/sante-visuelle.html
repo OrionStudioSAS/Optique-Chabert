@@ -10,21 +10,80 @@
 
   <!-- ── HEADER ──────────────────────────────────────────────── -->
   <header id="site-header" class="scrolled">
+
     <nav class="nav nav--left">
       <a href="../#boutique">La boutique</a>
-      <a href="../#services">Services</a>
+      <span class="nav-services-trigger" role="button" tabindex="0">Services</span>
       <a href="../#histoire">Qui sommes nous ?</a>
     </nav>
 
     <a href="../" class="header-logo" aria-label="Optique Chabert — accueil">
-      <img src="../assets/images/logo.png" alt="Optique Chabert">
+      <img src="../assets/images/logo-header.png" alt="Optique Chabert">
     </a>
 
     <nav class="nav nav--right">
       <a href="../#contact">Nous contacter</a>
       <a href="#rdv" class="nav-rdv">Prendre rendez-vous</a>
     </nav>
+
+    <button class="burger" id="burger-btn" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- Mega menu Services (desktop) -->
+    <div class="mega-menu" id="mega-menu">
+      <a href="sante-visuelle.html" class="mega-card">
+        <div class="mega-card-img" style="background-image:url('../assets/images/sante-visuelle.png')"></div>
+        <div class="mega-card-body">
+          <h4>Santé visuelle</h4>
+          <p>Bilan visuel complet sur rendez-vous</p>
+        </div>
+      </a>
+      <a href="lentilles-de-nuit.html" class="mega-card">
+        <div class="mega-card-img" style="background-image:url('../assets/images/lentille-de-nuit.png')"></div>
+        <div class="mega-card-body">
+          <h4>Lentilles de nuit</h4>
+          <p>Voir sans correction en journée</p>
+        </div>
+      </a>
+      <a href="basse-vision.html" class="mega-card">
+        <div class="mega-card-img" style="background-image:url('../assets/images/basse-vision.png')"></div>
+        <div class="mega-card-body">
+          <h4>Basse vision &amp; enfant</h4>
+          <p>Suivi spécialisé de la détection à l'équipement</p>
+        </div>
+      </a>
+      <a href="montures-solaires.html" class="mega-card">
+        <div class="mega-card-img" style="background-image:url('../assets/images/sante-visuelle.png')"></div>
+        <div class="mega-card-body">
+          <h4>Montures &amp; solaires</h4>
+          <p>Sélection française et japonaise</p>
+        </div>
+      </a>
+    </div>
+
   </header>
+
+  <!-- Nav mobile (hors header pour éviter le clipping du backdrop-filter) -->
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+    <nav class="mobile-nav-main">
+      <a href="../#boutique">La boutique</a>
+
+      <div class="mobile-nav-group">
+        <span class="mobile-nav-label">Services</span>
+        <div class="mobile-nav-sub">
+          <a href="sante-visuelle.html">Santé visuelle</a>
+          <a href="lentilles-de-nuit.html">Lentilles de nuit</a>
+          <a href="basse-vision.html">Basse vision &amp; enfant</a>
+          <a href="montures-solaires.html">Montures &amp; solaires</a>
+        </div>
+      </div>
+
+      <a href="../#histoire">Qui sommes nous ?</a>
+      <a href="../#contact">Nous contacter</a>
+    </nav>
+    <a href="#rdv" class="mobile-nav-rdv">Prendre rendez-vous</a>
+  </div>
 
   <!-- ── HERO ────────────────────────────────────────────────── -->
   <section class="service-hero">
@@ -103,7 +162,6 @@
 
     <div class="footer-nav-bar">
       <div class="footer-left">
-        <img class="footer-logo" src="../assets/images/logo.png" alt="Optique Chabert">
         <span class="footer-address-name">&#9737; Optique Chabert</span>
         <span class="footer-address-detail">28 Rue Arson,<br>Nice 06400, France</span>
       </div>

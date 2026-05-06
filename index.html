@@ -5,26 +5,90 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Optique Chabert — Depuis 1969</title>
 <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
 </head>
 <body>
 
   <!-- ── HEADER ──────────────────────────────────────────────── -->
   <header id="site-header">
+
+    <!-- Nav gauche desktop -->
     <nav class="nav nav--left">
       <a href="#boutique">La boutique</a>
-      <a href="#services">Services</a>
+      <span class="nav-services-trigger" role="button" tabindex="0">Services</span>
       <a href="#histoire">Qui sommes nous ?</a>
     </nav>
 
+    <!-- Logo (centre desktop / gauche mobile) -->
     <a href="/" class="header-logo" aria-label="Optique Chabert — accueil">
-      <img src="assets/images/logo.png" alt="Optique Chabert">
+      <img src="assets/images/logo-header.png" alt="Optique Chabert">
     </a>
 
+    <!-- Nav droite desktop -->
     <nav class="nav nav--right">
       <a href="#contact">Nous contacter</a>
       <a href="#rdv" class="nav-rdv">Prendre rendez-vous</a>
     </nav>
+
+    <!-- Burger (mobile) -->
+    <button class="burger" id="burger-btn" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- Mega menu Services (desktop) -->
+    <div class="mega-menu" id="mega-menu">
+      <a href="services/sante-visuelle.html" class="mega-card">
+        <div class="mega-card-img" style="background-image:url('assets/images/sante-visuelle.png')"></div>
+        <div class="mega-card-body">
+          <h4>Santé visuelle</h4>
+          <p>Bilan visuel complet sur rendez-vous</p>
+        </div>
+      </a>
+      <a href="services/lentilles-de-nuit.html" class="mega-card">
+        <div class="mega-card-img" style="background-image:url('assets/images/lentille-de-nuit.png')"></div>
+        <div class="mega-card-body">
+          <h4>Lentilles de nuit</h4>
+          <p>Voir sans correction en journée</p>
+        </div>
+      </a>
+      <a href="services/basse-vision.html" class="mega-card">
+        <div class="mega-card-img" style="background-image:url('assets/images/basse-vision.png')"></div>
+        <div class="mega-card-body">
+          <h4>Basse vision &amp; enfant</h4>
+          <p>Suivi spécialisé de la détection à l'équipement</p>
+        </div>
+      </a>
+      <a href="services/montures-solaires.html" class="mega-card">
+        <div class="mega-card-img" style="background-image:url('assets/images/sante-visuelle.png')"></div>
+        <div class="mega-card-body">
+          <h4>Montures &amp; solaires</h4>
+          <p>Sélection française et japonaise</p>
+        </div>
+      </a>
+    </div>
+
   </header>
+
+  <!-- Nav mobile (hors header pour éviter le clipping du backdrop-filter) -->
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+    <nav class="mobile-nav-main">
+      <a href="#boutique">La boutique</a>
+
+      <div class="mobile-nav-group">
+        <span class="mobile-nav-label">Services</span>
+        <div class="mobile-nav-sub">
+          <a href="services/sante-visuelle.html">Santé visuelle</a>
+          <a href="services/lentilles-de-nuit.html">Lentilles de nuit</a>
+          <a href="services/basse-vision.html">Basse vision &amp; enfant</a>
+          <a href="services/montures-solaires.html">Montures &amp; solaires</a>
+        </div>
+      </div>
+
+      <a href="#histoire">Qui sommes nous ?</a>
+      <a href="#contact">Nous contacter</a>
+    </nav>
+    <a href="#rdv" class="mobile-nav-rdv">Prendre rendez-vous</a>
+  </div>
 
   <!-- ── HERO ────────────────────────────────────────────────── -->
   <section id="hero">
@@ -249,15 +313,8 @@
 
     </div><!-- /contact-info -->
 
-    <!-- Colonne droite : carte OpenStreetMap -->
-    <div class="contact-map">
-      <iframe
-        title="Optique Chabert — 28 Rue Arson, Nice"
-        src="https://www.openstreetmap.org/export/embed.html?bbox=7.254%2C43.708%2C7.270%2C43.714&amp;layer=mapnik&amp;marker=43.7102%2C7.2618"
-        loading="lazy"
-        allowfullscreen>
-      </iframe>
-    </div>
+    <!-- Colonne droite : carte Leaflet -->
+    <div class="contact-map" id="leaflet-map"></div>
 
   </section>
 
@@ -267,7 +324,6 @@
     <!-- Bande nav -->
     <div class="footer-nav-bar">
       <div class="footer-left">
-        <img class="footer-logo" src="assets/images/logo.png" alt="Optique Chabert">
         <span class="footer-address-name">&#9737; Optique Chabert</span>
         <span class="footer-address-detail">28 Rue Arson,<br>Nice 06400, France</span>
       </div>
@@ -307,6 +363,46 @@
 
   </footer>
 
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
   <script src="assets/js/script.js"></script>
+  <script>
+    (function () {
+      const mapEl = document.getElementById('leaflet-map');
+      if (!mapEl) return;
+
+      const map = L.map('leaflet-map', {
+        center: [43.7102, 7.2618],
+        zoom: 16,
+        zoomControl: false,
+        scrollWheelZoom: false,
+      });
+
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 20,
+      }).addTo(map);
+
+      L.control.zoom({ position: 'bottomright' }).addTo(map);
+
+      const icon = L.divIcon({
+        className: '',
+        html: `<div style="
+          width:14px; height:14px;
+          background:#F67E38;
+          border:3px solid #fff;
+          border-radius:50%;
+          box-shadow:0 2px 8px rgba(0,0,0,0.3);
+        "></div>`,
+        iconSize: [14, 14],
+        iconAnchor: [7, 7],
+      });
+
+      L.marker([43.7102, 7.2618], { icon })
+        .addTo(map)
+        .bindPopup('<strong>Optique Chabert</strong><br>28 Rue Arson, Nice')
+        .openPopup();
+    })();
+  </script>
 </body>
 </html>
