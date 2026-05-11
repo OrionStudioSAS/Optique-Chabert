@@ -861,6 +861,155 @@ a.contact-value:hover { opacity: 0.6; }
 }
 
 
+/* ── PAGE NOS MARQUES ──────────────────────────────────────── */
+.marques-hero {
+  position: relative;
+  height: calc(100vh - var(--header-h));
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.marques-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.04);
+}
+
+.marques-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.15) 0%,
+    rgba(0,0,0,0.05) 40%,
+    rgba(0,0,0,0.65) 100%
+  );
+}
+
+.marques-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 72px 64px;
+  color: white;
+}
+
+.marques-hero-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 12px;
+}
+
+.marques-hero-content h1 {
+  font-size: clamp(40px, 6vw, 80px);
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+.marques-hero-content > p {
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 560px;
+  opacity: 0.88;
+}
+
+.marques-intro {
+  max-width: 760px;
+  margin: 80px auto;
+  padding: 0 40px;
+  text-align: center;
+}
+
+.marques-intro p {
+  font-size: 16px;
+  line-height: 1.85;
+  color: #555;
+}
+
+.marques-grid-section {
+  padding: 0 40px 100px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.marques-category {
+  margin-bottom: 80px;
+}
+
+.marques-category-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #aaa;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #ece8e3;
+}
+
+.marques-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+}
+
+.marque-card {
+  background: #faf8f5;
+  overflow: hidden;
+}
+
+.marque-card-img {
+  height: 240px;
+  background-size: cover;
+  background-position: center;
+  background-color: #ece8e3;
+  transition: transform 0.5s ease;
+}
+
+.marque-card:hover .marque-card-img {
+  transform: scale(1.04);
+}
+
+.marque-card-body {
+  padding: 24px 28px 32px;
+}
+
+.marque-card-body h3 {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--dark);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.marque-card-body p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #777;
+}
+
+@media (max-width: 1100px) {
+  .marques-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .marques-hero-content { padding: 0 24px 48px; }
+  .marques-intro { margin: 48px auto; padding: 0 24px; }
+  .marques-grid-section { padding: 0 24px 64px; }
+  .marques-grid { grid-template-columns: 1fr; }
+  .marque-card-img { height: 200px; }
+}
+
+
 /* ── PAGES SERVICE ─────────────────────────────────────────── */
 
 /* Hero court (60vh) réutilisé sur les pages service */
