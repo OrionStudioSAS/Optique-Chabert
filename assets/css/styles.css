@@ -244,7 +244,7 @@ img { display: block; max-width: 100%; }
 #services-wrapper {
   position: relative;
   margin-top: 4px;
-  height: calc(100vh - var(--header-h) + 100vw + 12px); /* 12px = 3 gaps × 4px */
+  height: calc(100vh - var(--header-h) + 50vw + 8px); /* 8px = 2 gaps × 4px, 3 cartes */
 }
 
 #services-sticky {
@@ -292,7 +292,7 @@ img { display: block; max-width: 100%; }
 .service-bg--1 { background-image: url('../images/sante-visuelle.png'); }
 .service-bg--2 { background-image: url('../images/lentille-de-nuit.png'); }
 .service-bg--3 { background-image: url('../images/basse-vision.png'); }
-.service-bg--4 { background-image: url('../images/sante-visuelle.png'); }
+.service-bg--4 { background-image: url('../images/montures_solaires.png'); }
 
 /* Overlay au-dessus du lien carte */
 .service-overlay {
@@ -348,6 +348,49 @@ img { display: block; max-width: 100%; }
   background: rgba(255,255,255,0.9);
   color: var(--dark);
   border-color: transparent;
+}
+
+
+/* ── MONTURES & SOLAIRES ────────────────────────────────────── */
+#montures {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 4px;
+}
+
+.montures-img {
+  background-size: cover;
+  background-position: center;
+  min-height: 560px;
+}
+
+.montures-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 72px;
+  background: #faf8f5;
+}
+
+.montures-content h2 {
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--dark);
+  margin-bottom: 28px;
+}
+
+.montures-content p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+.montures-content .btn {
+  align-self: flex-start;
+  margin-top: 16px;
 }
 
 
@@ -1240,6 +1283,11 @@ a.contact-value:hover { opacity: 0.6; }
     width: 100%;
     height: 80vw;
   }
+
+  /* ── Montures ── */
+  #montures { grid-template-columns: 1fr; }
+  .montures-img { min-height: 300px; }
+  .montures-content { padding: 48px 24px; }
 
   /* ── Notre histoire : colonne unique ── */
   #histoire { grid-template-columns: 1fr; }
