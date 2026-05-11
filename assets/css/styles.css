@@ -355,6 +355,7 @@ img { display: block; max-width: 100%; }
 #montures {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  height: calc(100vh - var(--header-h));
   margin-top: 4px;
   margin-bottom: 4px;
 }
@@ -362,7 +363,6 @@ img { display: block; max-width: 100%; }
 .montures-img {
   background-size: cover;
   background-position: center;
-  min-height: 560px;
 }
 
 .montures-content {
@@ -371,6 +371,7 @@ img { display: block; max-width: 100%; }
   justify-content: center;
   padding: 80px 72px;
   background: #faf8f5;
+  overflow-y: auto;
 }
 
 .montures-content h2 {
@@ -1286,8 +1287,8 @@ a.contact-value:hover { opacity: 0.6; }
   }
 
   /* ── Montures ── */
-  #montures { grid-template-columns: 1fr; }
-  .montures-img { min-height: 300px; }
+  #montures { grid-template-columns: 1fr; height: auto; }
+  .montures-img { min-height: 50vw; }
   .montures-content { padding: 48px 24px; }
 
   /* ── Notre histoire : colonne unique ── */
