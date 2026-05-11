@@ -400,6 +400,7 @@ img { display: block; max-width: 100%; }
 #histoire {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  margin-top: 4px;
   background: #fff;
 }
 
