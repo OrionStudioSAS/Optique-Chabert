@@ -447,7 +447,7 @@ img { display: block; max-width: 100%; }
 .histoire-timeline::before {
   content: '';
   position: absolute;
-  left: clamp(16px, 2.2vw, 28px);
+  left: calc(clamp(48px, 6vw, 80px) / 2);
   top: 8vh;
   bottom: 8vh;
   width: 1px;
@@ -1413,31 +1413,32 @@ a.contact-value:hover { opacity: 0.6; }
 
   .hero-content h1 { font-size: 32px; }
 
-  /* ── Services : empilement vertical ── */
+  /* ── Services : scroll horizontal conservé ── */
   #services-wrapper {
-    height: auto;
+    height: calc(100vh - var(--header-h) + 200vw + 8px);
     margin-top: 4px;
   }
 
   #services-sticky {
-    position: static;
-    height: auto;
-    overflow: visible;
+    position: sticky;
+    top: var(--header-h);
+    height: calc(100vh - var(--header-h));
+    overflow: hidden;
   }
 
   #services-track {
-    flex-direction: column;
-    transform: none !important;
+    flex-direction: row;
     gap: 4px;
   }
 
   .service-card {
-    width: 100%;
-    height: 80vw;
+    width: 100vw;
+    height: calc(100vh - var(--header-h));
+    flex-shrink: 0;
   }
 
   /* ── Montures ── */
-  #montures { grid-template-columns: 1fr; height: auto; }
+  #montures { grid-template-columns: 1fr; min-height: 100vh; height: auto; }
   .montures-img { min-height: 50vw; }
   .montures-content { padding: 48px 24px; }
 
@@ -1446,18 +1447,61 @@ a.contact-value:hover { opacity: 0.6; }
 
   .histoire-img-col { display: none; }
 
-  .histoire-step {
-    min-height: auto;
-    padding: 48px 24px;
-    opacity: 1 !important;
-    transform: none !important;
-  }
-
   .histoire-timeline { padding-left: 36px; }
 
-  .histoire-timeline::before { left: 10px; }
+  .histoire-timeline::before { left: 18px; }
 
   .step-mark { left: calc(-36px); width: 36px; }
+
+  .histoire-step {
+    min-height: 100vh;
+    padding: 60px 24px 60px 0;
+    opacity: 1 !important;
+    transform: none !important;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .histoire-step::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    z-index: 0;
+  }
+
+  .histoire-step::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(15,15,12,0.65);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    z-index: 0;
+  }
+
+  .histoire-step.active::before,
+  .histoire-step.active::after { opacity: 1; }
+
+  .histoire-step[data-img="0"]::before { background-image: url('../images/notre-histoire.png'); }
+  .histoire-step[data-img="1"]::before { background-image: url('../images/sante-visuelle.png'); }
+  .histoire-step[data-img="2"]::before { background-image: url('../images/lentille-de-nuit.png'); }
+  .histoire-step[data-img="3"]::before { background-image: url('../images/basse-vision.png'); }
+
+  .step-mark { z-index: 1; }
+  .step-body { position: relative; z-index: 1; }
+
+  .histoire-step.active .histoire-year,
+  .histoire-step.active h2,
+  .histoire-step.active p { color: white; }
+
+  .histoire-step.active .step-dot {
+    border-color: white;
+    background: white;
+  }
 
   .histoire-year { font-size: 40px; }
 
