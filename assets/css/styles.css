@@ -236,15 +236,15 @@ img { display: block; max-width: 100%; }
 
 /* ── SERVICES — SCROLL HORIZONTAL ─────────────────────────── */
 /*
-  Hauteur totale du wrapper = 100vh (zone sticky) + 100vw (distance de défilement H)
-  → 4 cartes × 50vw = 200vw au total ; visible au départ : 100vw (2 cartes)
-  → distance à parcourir : 100vw
-  Le scroll vertical pilote la translation horizontale pixel pour pixel.
+  Hauteur totale du wrapper = 100vh (zone sticky) + overflow horizontal
+  → 5 cartes × 50vw = 250vw au total ; visible au départ : 100vw (2 cartes)
+  → distance à parcourir : 150vw + 16px (4 gaps × 4px)
+  Le scroll vertical pilote la translation horizontale, ratio ≈ 1:1
 */
 #services-wrapper {
   position: relative;
   margin-top: 4px;
-  height: calc(100vh - var(--header-h) + 50vw + 8px); /* 8px = 2 gaps × 4px, 3 cartes */
+  height: calc(100vh - var(--header-h) + 150vw + 16px);
 }
 
 #services-sticky {
