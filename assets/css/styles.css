@@ -290,9 +290,10 @@ img { display: block; max-width: 100%; }
 }
 
 .service-bg--1 { background-image: url('../images/sante-visuelle.png'); }
-.service-bg--2 { background-image: url('../images/lentille-de-nuit.png'); }
-.service-bg--3 { background-image: url('../images/basse-vision.png'); }
-.service-bg--4 { background-image: url('../images/montures_solaires.png'); }
+.service-bg--2 { background-image: url('../images/notre-histoire.png'); }
+.service-bg--3 { background-image: url('../images/lentille-de-nuit.png'); }
+.service-bg--4 { background-image: url('../images/basse-vision.png'); }
+.service-bg--5 { background-image: url('../images/montures_solaires.png'); }
 
 /* Overlay au-dessus du lien carte */
 .service-overlay {
@@ -1192,7 +1193,7 @@ a.contact-value:hover { opacity: 0.6; }
   left: 0;
   right: 0;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   height: 340px;
   background: #fff;
   box-shadow: 0 24px 48px rgba(0,0,0,0.12);
@@ -1415,7 +1416,7 @@ a.contact-value:hover { opacity: 0.6; }
 
   /* ── Services : scroll horizontal conservé ── */
   #services-wrapper {
-    height: calc(100vh - var(--header-h) + 200vw + 8px);
+    height: calc(100vh - var(--header-h) + 400vw + 8px);
     margin-top: 4px;
   }
 
