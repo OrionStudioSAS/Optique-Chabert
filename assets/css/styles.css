@@ -1529,16 +1529,23 @@ a.contact-value:hover { opacity: 0.6; }
   /* ── Footer nav ── */
   .footer-nav-bar {
     flex-direction: column;
+    align-items: flex-start;
     padding: 40px 24px;
-    gap: 28px;
+    gap: 32px;
   }
+
+  .footer-address-name { white-space: nowrap; }
 
   .footer-cols {
     flex-direction: column;
-    gap: 16px;
+    gap: 24px;
+    width: 100%;
   }
 
-  .footer-col { flex-direction: row; flex-wrap: wrap; gap: 12px 24px; }
+  .footer-col {
+    flex-direction: column;
+    gap: 10px;
+  }
 
   .footer-copy { padding: 16px 24px; }
 
