@@ -6,12 +6,19 @@
 
   function updateHeader() {
     const y = window.scrollY;
+
+    // Pages sans hero (services, marques…) : header toujours scrolled
+    if (!heroBg) {
+      header.classList.add('scrolled');
+      return;
+    }
+
     header.classList.toggle('scrolled', y > 80);
 
     if (heroLogo) {
       heroLogo.style.opacity = Math.max(0, 1 - y / 280);
     }
-    if (heroBg && y < window.innerHeight) {
+    if (y < window.innerHeight) {
       heroBg.style.transform = `scale(1.04) translateY(${y * 0.18}px)`;
     }
   }
