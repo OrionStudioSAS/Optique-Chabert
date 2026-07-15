@@ -1711,3 +1711,68 @@ a.contact-value:hover { opacity: 0.6; }
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
 }
+
+
+/* ── PAGE MENTIONS LÉGALES ─────────────────────────────────── */
+.legal-page {
+  padding: clamp(80px, 10vw, 140px) clamp(24px, 8vw, 120px) clamp(60px, 8vw, 100px);
+  min-height: calc(100vh - var(--header-h));
+  background: #fff;
+}
+
+.legal-container {
+  max-width: 740px;
+}
+
+.legal-title {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--dark);
+  margin-bottom: clamp(40px, 6vw, 64px);
+  line-height: 1;
+}
+
+.legal-section {
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #ece8e3;
+}
+
+.legal-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.legal-section h2 {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.legal-section p {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--mid);
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.legal-section p:last-child { margin-bottom: 0; }
+
+.legal-section a {
+  color: var(--dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.legal-section strong { color: var(--dark); font-weight: 500; }
+
+.legal-date {
+  font-size: 12px;
+  opacity: 0.55;
+}
