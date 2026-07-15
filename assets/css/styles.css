@@ -717,7 +717,7 @@ a.contact-value:hover { opacity: 0.6; }
 .hours-row:last-child { border-bottom: none; }
 
 /* Instagram */
-.contact-instagram {
+.contact-social {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -727,7 +727,7 @@ a.contact-value:hover { opacity: 0.6; }
   transition: opacity 0.2s;
 }
 
-.contact-instagram:hover { opacity: 0.6; }
+.contact-social:hover { opacity: 0.6; }
 
 /* Colonne droite : carte */
 .contact-map {
