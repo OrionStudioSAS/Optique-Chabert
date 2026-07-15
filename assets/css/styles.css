@@ -205,7 +205,7 @@ img { display: block; max-width: 100%; }
 .hero-content h1 {
   font-family: var(--sans);
   font-size: clamp(36px, 5.5vw, 68px);
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   margin-bottom: 18px;
@@ -213,7 +213,7 @@ img { display: block; max-width: 100%; }
 }
 
 .hero-content p {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.75;
   opacity: 0.88;
   margin-bottom: 32px;
@@ -324,14 +324,14 @@ img { display: block; max-width: 100%; }
 .service-overlay h3 {
   font-family: var(--serif);
   font-size: clamp(24px, 2.8vw, 36px);
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 0.02em;
   margin-bottom: 12px;
   line-height: 1.15;
 }
 
 .service-overlay p {
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.7;
   font-weight: 300;
   opacity: 0.88;
@@ -385,7 +385,7 @@ img { display: block; max-width: 100%; }
 
 .montures-content h2 {
   font-size: clamp(28px, 3vw, 42px);
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--dark);
@@ -393,7 +393,7 @@ img { display: block; max-width: 100%; }
 }
 
 .montures-content p {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.75;
   color: #555;
   margin-bottom: 16px;
@@ -517,7 +517,7 @@ img { display: block; max-width: 100%; }
 
 .histoire-step h2 {
   font-size: clamp(32px, 4.5vw, 60px);
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   line-height: 1;
@@ -534,7 +534,7 @@ img { display: block; max-width: 100%; }
 }
 
 .histoire-intro {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.85;
   color: var(--mid);
   font-weight: 300;
@@ -554,7 +554,7 @@ img { display: block; max-width: 100%; }
 .histoire-year--today { font-weight: 300; }
 
 .step-body p {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.8;
   color: var(--mid);
   font-weight: 300;
@@ -579,7 +579,7 @@ img { display: block; max-width: 100%; }
 
 .avis-header h2 {
   font-size: clamp(24px, 3.5vw, 44px);
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -616,7 +616,7 @@ img { display: block; max-width: 100%; }
 }
 
 .avis-card p {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.75;
   color: var(--mid);
   font-weight: 300;
@@ -653,7 +653,7 @@ img { display: block; max-width: 100%; }
 
 .contact-info h2 {
   font-size: clamp(28px, 3.5vw, 48px);
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   line-height: 1;
