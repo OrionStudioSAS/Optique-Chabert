@@ -1091,6 +1091,10 @@ a.contact-value:hover { opacity: 0.6; }
 .service-body-left {
   padding: clamp(60px, 7vw, 100px) clamp(40px, 5vw, 80px);
   border-right: 1px solid #ece8e3;
+  background: #fff;
+  position: sticky;
+  top: var(--header-h);
+  align-self: start;
 }
 
 .service-body-left h2 {
@@ -1556,7 +1560,7 @@ a.contact-value:hover { opacity: 0.6; }
   /* ── Page service ── */
   .service-body { grid-template-columns: 1fr; }
 
-  .service-body-left { border-right: none; border-bottom: 1px solid #ece8e3; }
+  .service-body-left { border-right: none; border-bottom: 1px solid #ece8e3; position: relative; align-self: auto; }
 
   .service-hero-content { padding: 0 24px 40px; }
 
