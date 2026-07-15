@@ -135,11 +135,21 @@
 (function () {
   const trigger = document.querySelector('.nav-services-trigger');
   const menu    = document.getElementById('mega-menu');
+  const header  = document.getElementById('site-header');
   if (!trigger || !menu) return;
 
   let timeout;
-  const show = () => { clearTimeout(timeout); menu.classList.add('visible'); };
-  const hide = () => { timeout = setTimeout(() => menu.classList.remove('visible'), 200); };
+  const show = () => {
+    clearTimeout(timeout);
+    menu.classList.add('visible');
+    if (header) header.classList.add('scrolled');
+  };
+  const hide = () => {
+    timeout = setTimeout(() => {
+      menu.classList.remove('visible');
+      if (header && window.scrollY <= 80) header.classList.remove('scrolled');
+    }, 200);
+  };
 
   trigger.addEventListener('mouseenter', show);
   trigger.addEventListener('mouseleave', hide);
