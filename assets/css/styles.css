@@ -750,66 +750,84 @@ a.contact-value:hover { opacity: 0.6; }
   font-weight: 300;
   color: var(--mid);
   line-height: 1.7;
+  margin-bottom: 24px;
 }
 
-.acces-list {
+.acces-grid {
+  display: flex;
+  align-items: stretch;
+  margin-bottom: 24px;
+}
+
+.acces-col {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  margin-top: 4px;
-}
-
-.acces-item {
-  display: flex;
-  gap: 14px;
-  align-items: flex-start;
-}
-
-.acces-icon {
-  font-size: 18px;
-  line-height: 1.4;
-  flex-shrink: 0;
-  width: 24px;
+  align-items: center;
   text-align: center;
+  padding: 16px 12px;
 }
 
-.acces-body {
-  flex: 1;
+.acces-sep {
+  width: 1px;
+  background: #e0dbd5;
+  margin: 4px 0;
+  align-self: stretch;
 }
 
-.acces-body strong {
+.acces-svg {
+  width: 40px;
+  height: 40px;
+  color: var(--dark);
+  margin-bottom: 14px;
+}
+
+.acces-title {
   display: block;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--dark);
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
-.acces-body p,
-.acces-body li {
-  font-size: 13px;
+.acces-desc {
+  font-size: 12px;
   font-weight: 300;
   color: var(--mid);
   line-height: 1.65;
 }
 
-.acces-body ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.acces-sub {
+  font-size: 11px;
+  opacity: 0.7;
 }
 
-.acces-body ul li::before {
-  content: "–\00a0";
-  opacity: 0.5;
+.acces-dot {
+  color: var(--accent);
+  font-weight: 600;
 }
 
-.acces-stops {
-  margin-top: 6px;
-  padding-top: 6px;
-  border-top: 1px solid #ece8e3;
+.acces-maps-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid var(--dark);
+  color: var(--dark);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: background 0.2s, color 0.2s;
+  box-sizing: border-box;
+}
+
+.acces-maps-btn:hover {
+  background: var(--dark);
+  color: #fff;
 }
 
 /* ── BOUTON STICKY APPEL MOBILE ─────────────────────────────── */
