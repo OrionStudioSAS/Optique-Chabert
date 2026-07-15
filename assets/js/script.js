@@ -114,6 +114,23 @@
 })();
 
 
+/* ── SCROLL REVEAL ──────────────────────────────────────────── */
+(function () {
+  const revealObs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach(function (el) {
+    revealObs.observe(el);
+  });
+})();
+
+
 /* ── MEGA MENU HOVER ────────────────────────────────────────── */
 (function () {
   const trigger = document.querySelector('.nav-services-trigger');

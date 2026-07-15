@@ -3,8 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Optique Chabert — Depuis 1969</title>
-<link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- ── SEO ──────────────────────────────────────────────────── -->
+  <title>Optique Chabert Nice — Opticien artisanal depuis 1969</title>
+  <meta name="description" content="Optique Chabert à Nice (06400) — opticien artisanal depuis 1969. Examen de vue, lentilles de contact et de nuit, basse vision. Montures françaises et japonaises sélectionnées avec soin.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://optique-chabert.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Optique Chabert">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Optique Chabert Nice — Opticien artisanal depuis 1969">
+  <meta property="og:description" content="Opticien artisanal à Nice depuis 1969. Examen de vue, lentilles de contact et de nuit, basse vision. Montures françaises et japonaises.">
+  <meta property="og:url" content="https://optique-chabert.com/">
+  <meta property="og:image" content="https://optique-chabert.com/assets/images/notre-histoire.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Optique Chabert Nice — Opticien artisanal depuis 1969">
+  <meta name="twitter:description" content="Opticien artisanal à Nice depuis 1969. Examen de vue, lentilles, basse vision, montures françaises et japonaises.">
+  <meta name="twitter:image" content="https://optique-chabert.com/assets/images/notre-histoire.webp">
+
+  <!-- Schema.org — LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Optician",
+    "name": "Optique Chabert",
+    "description": "Opticien artisanal à Nice depuis 1969. Examen de vue, lentilles de contact et de nuit, basse vision, montures françaises et japonaises.",
+    "url": "https://optique-chabert.com",
+    "telephone": "+33493894694",
+    "email": "optique-chabert@wanadoo.fr",
+    "foundingDate": "1969",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "28 Rue Arson",
+      "addressLocality": "Nice",
+      "postalCode": "06400",
+      "addressCountry": "FR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 43.7102,
+      "longitude": 7.2618
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday"], "opens": "09:30", "closes": "19:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:30", "closes": "18:00" }
+    ],
+    "sameAs": ["https://www.instagram.com/optique.chabert"],
+    "image": "https://optique-chabert.com/assets/images/notre-histoire.webp",
+    "priceRange": "€€"
+  }
+  </script>
+
+  <!-- Schema.org — WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Optique Chabert",
+    "url": "https://optique-chabert.com"
+  }
+  </script>
+
+  <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
 </head>
 <body>
@@ -12,24 +78,23 @@
   <!-- ── HEADER ──────────────────────────────────────────────── -->
   <header id="site-header">
 
-    <!-- Nav gauche desktop -->
     <nav class="nav nav--left">
       <a href="#boutique">La boutique</a>
       <span class="nav-services-trigger" role="button" tabindex="0">Services</span>
       <a href="#histoire">Qui sommes nous ?</a>
     </nav>
 
-    <!-- Logo (centre desktop / gauche mobile) -->
     <a href="/" class="header-logo" aria-label="Optique Chabert — accueil">
-      <img src="assets/images/logo-header.png" alt="Optique Chabert">
+      <picture>
+        <source srcset="assets/images/logo-header.webp" type="image/webp">
+        <img src="assets/images/logo-header.png" alt="Optique Chabert" width="160" height="40">
+      </picture>
     </a>
 
-    <!-- Nav droite desktop -->
     <nav class="nav nav--right">
       <a href="#contact" class="nav-rdv">Nous contacter</a>
     </nav>
 
-    <!-- Burger (mobile) -->
     <button class="burger" id="burger-btn" aria-label="Ouvrir le menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -37,35 +102,35 @@
     <!-- Mega menu Services (desktop) -->
     <div class="mega-menu" id="mega-menu">
       <a href="services/examen-de-vue.html" class="mega-card">
-        <div class="mega-card-img" style="background-image:url('assets/images/sante-visuelle.png')"></div>
+        <div class="mega-card-img" style="background-image:url('assets/images/sante-visuelle.webp')"></div>
         <div class="mega-card-body">
           <h4>Examen de vue</h4>
           <p>Évaluation complète de votre vision</p>
         </div>
       </a>
       <a href="services/lentilles-de-contact.html" class="mega-card">
-        <div class="mega-card-img" style="background-image:url('assets/images/notre-histoire.png')"></div>
+        <div class="mega-card-img" style="background-image:url('assets/images/notre-histoire.webp')"></div>
         <div class="mega-card-body">
           <h4>Lentilles de contact</h4>
           <p>Adaptation et suivi personnalisés</p>
         </div>
       </a>
       <a href="services/lentilles-de-nuit.html" class="mega-card">
-        <div class="mega-card-img" style="background-image:url('assets/images/lentille-de-nuit.png')"></div>
+        <div class="mega-card-img" style="background-image:url('assets/images/lentille-de-nuit.webp')"></div>
         <div class="mega-card-body">
           <h4>Lentilles de nuit</h4>
           <p>Voir sans correction en journée</p>
         </div>
       </a>
       <a href="services/basse-vision.html" class="mega-card">
-        <div class="mega-card-img" style="background-image:url('assets/images/basse-vision.png')"></div>
+        <div class="mega-card-img" style="background-image:url('assets/images/basse-vision.webp')"></div>
         <div class="mega-card-body">
           <h4>Basse vision</h4>
           <p>Solutions pour les déficiences visuelles</p>
         </div>
       </a>
       <a href="services/vision-de-l-enfant.html" class="mega-card">
-        <div class="mega-card-img" style="background-image:url('assets/images/montures_solaires.png')"></div>
+        <div class="mega-card-img" style="background-image:url('assets/images/montures_solaires.webp')"></div>
         <div class="mega-card-body">
           <h4>Vision de l'enfant</h4>
           <p>Suivi et équipement adaptés à chaque âge</p>
@@ -75,7 +140,7 @@
 
   </header>
 
-  <!-- Nav mobile (hors header pour éviter le clipping du backdrop-filter) -->
+  <!-- Nav mobile -->
   <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
     <nav class="mobile-nav-main">
       <a href="#boutique">La boutique</a>
@@ -99,21 +164,18 @@
 
   <!-- ── HERO ────────────────────────────────────────────────── -->
   <section id="hero">
-    <!--
-      Remplacer par votre image : background-image: url('hero.jpg')
-      Image recommandée : la photo de la vitrine à travers les lunettes géantes
-    -->
     <video class="hero-bg" autoplay muted loop playsinline preload="auto">
       <source src="assets/videos/montage.mp4" type="video/mp4">
     </video>
     <div class="hero-overlay"></div>
 
-    <!-- Grand logo centré dans le hero, disparaît au scroll -->
     <div class="hero-logo" aria-hidden="true">
-      <img src="assets/images/logo.png" alt="">
+      <picture>
+        <source srcset="assets/images/logo.webp" type="image/webp">
+        <img src="assets/images/logo.png" alt="" width="320" height="160">
+      </picture>
     </div>
 
-    <!-- Texte bas gauche -->
     <div class="hero-content" id="boutique">
       <h1>La boutique</h1>
       <p>Bien plus qu'un opticien, une maison dédiée à votre vision, votre confort et votre style.</p>
@@ -121,10 +183,6 @@
   </section>
 
   <!-- ── SERVICES — SCROLL HORIZONTAL ───────────────────────── -->
-  <!--
-    Hauteur = 100vh (sticky) + 100vw (distance de défilement horizontal)
-    → le scroll vertical pilote la translation horizontale, pixel pour pixel
-  -->
   <div id="services-wrapper">
     <div id="services-sticky">
       <div id="services-track">
@@ -189,28 +247,38 @@
           </div>
         </article>
 
-      </div><!-- /services-track -->
-    </div><!-- /services-sticky -->
-  </div><!-- /services-wrapper -->
+      </div>
+    </div>
+  </div>
 
   <!-- ── NOTRE HISTOIRE ──────────────────────────────────────── -->
   <section id="histoire">
 
-    <!-- Colonne gauche : image sticky qui change au scroll -->
     <div class="histoire-img-col">
       <div class="histoire-img-wrap">
-        <img class="histoire-img histoire-img--active" src="assets/images/notre-histoire.png"   alt="Notre histoire">
-        <img class="histoire-img"                      src="assets/images/sante-visuelle.png"   alt="1969">
-        <img class="histoire-img"                      src="assets/images/lentille-de-nuit.png" alt="1980">
-        <img class="histoire-img"                      src="assets/images/basse-vision.png"     alt="Aujourd'hui">
+        <picture>
+          <source srcset="assets/images/notre-histoire.webp" type="image/webp">
+          <img class="histoire-img histoire-img--active" src="assets/images/notre-histoire.png" alt="Optique Chabert, notre histoire" loading="lazy" width="800" height="600">
+        </picture>
+        <picture>
+          <source srcset="assets/images/sante-visuelle.webp" type="image/webp">
+          <img class="histoire-img" src="assets/images/sante-visuelle.png" alt="Optique Chabert 1969" loading="lazy" width="800" height="600">
+        </picture>
+        <picture>
+          <source srcset="assets/images/lentille-de-nuit.webp" type="image/webp">
+          <img class="histoire-img" src="assets/images/lentille-de-nuit.png" alt="Lentilles de nuit orthokératologie" loading="lazy" width="800" height="600">
+        </picture>
+        <picture>
+          <source srcset="assets/images/basse-vision.webp" type="image/webp">
+          <img class="histoire-img" src="assets/images/basse-vision.png" alt="Optique Chabert aujourd'hui" loading="lazy" width="800" height="600">
+        </picture>
       </div>
     </div>
 
-    <!-- Colonne droite : frise chronologique -->
     <div class="histoire-content-col">
       <div class="histoire-timeline">
 
-        <div class="histoire-step" data-img="0">
+        <div class="histoire-step reveal" data-img="0">
           <div class="step-mark"><div class="step-dot"></div></div>
           <div class="step-body">
             <span class="histoire-year">1967</span>
@@ -219,7 +287,7 @@
           </div>
         </div>
 
-        <div class="histoire-step" data-img="1">
+        <div class="histoire-step reveal reveal-d1" data-img="1">
           <div class="step-mark"><div class="step-dot"></div></div>
           <div class="step-body">
             <span class="histoire-year">1969</span>
@@ -228,7 +296,7 @@
           </div>
         </div>
 
-        <div class="histoire-step" data-img="2">
+        <div class="histoire-step reveal reveal-d2" data-img="2">
           <div class="step-mark"><div class="step-dot"></div></div>
           <div class="step-body">
             <span class="histoire-year">—</span>
@@ -237,7 +305,7 @@
           </div>
         </div>
 
-        <div class="histoire-step" data-img="3">
+        <div class="histoire-step reveal reveal-d3" data-img="3">
           <div class="step-mark"><div class="step-dot"></div></div>
           <div class="step-body">
             <span class="histoire-year histoire-year--today">2026</span>
@@ -246,13 +314,13 @@
           </div>
         </div>
 
-      </div><!-- /histoire-timeline -->
-    </div><!-- /histoire-content-col -->
+      </div>
+    </div>
   </section>
 
   <!-- ── MONTURES & SOLAIRES ────────────────────────────────── -->
   <section id="montures">
-    <div class="montures-content">
+    <div class="montures-content reveal">
       <h2>Une sélection hors du commun</h2>
       <p>
         Chez Optique Chabert, chaque monture est choisie avec soin. Nous travaillons essentiellement avec des créateurs artisanaux français et japonais. Des maisons qui fabriquent encore à l'ancienne, avec des matières nobles et un soin du détail que la grande distribution ne connaît pas.
@@ -262,32 +330,32 @@
       </p>
       <a href="nos-marques.html" class="btn btn--dark">Nos marques</a>
     </div>
-    <div class="montures-img" style="background-image:url('assets/images/montures_solaires.png')"></div>
+    <div class="montures-img" style="background-image:url('assets/images/montures_solaires.webp')" role="img" aria-label="Sélection de montures Optique Chabert"></div>
   </section>
 
   <!-- ── AVIS CLIENTS ───────────────────────────────────────── -->
   <section id="avis">
-    <div class="avis-header">
+    <div class="avis-header reveal">
       <h2>Ce que disent nos clients</h2>
       <a href="https://maps.google.com/?q=Optique+Chabert+28+Rue+Arson+Nice" target="_blank" rel="noopener" class="btn btn--dark">Voir tous les avis</a>
     </div>
 
     <div class="avis-grid">
 
-      <article class="avis-card">
-        <div class="avis-stars">★★★★★</div>
+      <article class="avis-card reveal">
+        <div class="avis-stars" aria-label="5 étoiles">★★★★★</div>
         <p>« Un accueil exceptionnel et des conseils vraiment personnalisés. Élodie prend le temps d'expliquer chaque détail — on repart avec des lunettes qui nous ressemblent vraiment. »</p>
         <span class="avis-author">Sophie M.</span>
       </article>
 
-      <article class="avis-card">
-        <div class="avis-stars">★★★★★</div>
+      <article class="avis-card reveal reveal-d1">
+        <div class="avis-stars" aria-label="5 étoiles">★★★★★</div>
         <p>« Spécialiste des lentilles de nuit, Optique Chabert m'a changé la vie. Plus besoin de correction en journée. Un suivi sérieux et bienveillant depuis le début. »</p>
         <span class="avis-author">Thomas R.</span>
       </article>
 
-      <article class="avis-card">
-        <div class="avis-stars">★★★★★</div>
+      <article class="avis-card reveal reveal-d2">
+        <div class="avis-stars" aria-label="5 étoiles">★★★★★</div>
         <p>« La sélection de montures est unique à Nice — des pièces introuvables ailleurs, françaises et japonaises. On sent immédiatement la passion du métier. »</p>
         <span class="avis-author">Camille D.</span>
       </article>
@@ -298,8 +366,7 @@
   <!-- ── NOUS CONTACTER ─────────────────────────────────────── -->
   <section id="contact">
 
-    <!-- Colonne gauche : infos -->
-    <div class="contact-info">
+    <div class="contact-info reveal">
 
       <h2>Nous contacter</h2>
 
@@ -332,7 +399,7 @@
       <div class="contact-block">
         <span class="contact-label">Suivez-nous</span>
         <a href="https://www.instagram.com/optique.chabert" target="_blank" rel="noopener" class="contact-instagram" aria-label="Instagram Optique Chabert">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <rect x="2" y="2" width="20" height="20" rx="5"/>
             <circle cx="12" cy="12" r="4.5"/>
             <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
@@ -341,9 +408,8 @@
         </a>
       </div>
 
-    </div><!-- /contact-info -->
+    </div>
 
-    <!-- Colonne droite : carte Leaflet -->
     <div class="contact-map" id="leaflet-map"></div>
 
   </section>
@@ -351,7 +417,6 @@
   <!-- ── FOOTER ──────────────────────────────────────────────── -->
   <footer id="footer">
 
-    <!-- Bande nav -->
     <div class="footer-nav-bar">
       <div class="footer-left">
         <span class="footer-address-name">&#9737; Optique Chabert</span>
@@ -379,12 +444,10 @@
       </nav>
     </div>
 
-    <!-- Copyright -->
     <div class="footer-copy">
       &copy; 2025 Optique Chabert &ndash; Tous droits réservés &ndash; Site by <a href="https://orion-studio.io" target="_blank" rel="noopener">Orion Studio</a>
     </div>
 
-    <!-- Grand bloc statement -->
     <div class="footer-statement">
       <div class="footer-statement-text">
         <span class="footer-big-name">Optique Chabert</span>
@@ -418,13 +481,7 @@
 
       const icon = L.divIcon({
         className: '',
-        html: `<div style="
-          width:14px; height:14px;
-          background:#F67E38;
-          border:3px solid #fff;
-          border-radius:50%;
-          box-shadow:0 2px 8px rgba(0,0,0,0.3);
-        "></div>`,
+        html: `<div style="width:14px;height:14px;background:#F67E38;border:3px solid #fff;border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,0.3);"></div>`,
         iconSize: [14, 14],
         iconAnchor: [7, 7],
       });

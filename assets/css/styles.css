@@ -27,7 +27,9 @@ img { display: block; max-width: 100%; }
 
 /* ── BOUTONS ───────────────────────────────────────────────── */
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid currentColor;
   padding: 11px 22px;
   font-family: var(--sans);
@@ -295,11 +297,11 @@ img { display: block; max-width: 100%; }
   transform: scale(1.04);
 }
 
-.service-bg--1 { background-image: url('../images/sante-visuelle.png'); }
-.service-bg--2 { background-image: url('../images/notre-histoire.png'); }
-.service-bg--3 { background-image: url('../images/lentille-de-nuit.png'); }
-.service-bg--4 { background-image: url('../images/basse-vision.png'); }
-.service-bg--5 { background-image: url('../images/montures_solaires.png'); }
+.service-bg--1 { background-image: url('../images/sante-visuelle.webp'); }
+.service-bg--2 { background-image: url('../images/notre-histoire.webp'); }
+.service-bg--3 { background-image: url('../images/lentille-de-nuit.webp'); }
+.service-bg--4 { background-image: url('../images/basse-vision.webp'); }
+.service-bg--5 { background-image: url('../images/montures_solaires.webp'); }
 
 /* Overlay au-dessus du lien carte */
 .service-overlay {
@@ -835,7 +837,7 @@ a.contact-value:hover { opacity: 0.6; }
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background-image: url('../images/footer.png');
+  background-image: url('../images/footer.webp');
   background-size: 100% auto;
   background-position: center bottom;
   background-repeat: no-repeat;
@@ -1502,10 +1504,10 @@ a.contact-value:hover { opacity: 0.6; }
     background: rgba(15,15,12,0.70);
   }
 
-  .histoire-step[data-img="0"]::before { background-image: url('../images/notre-histoire.png'); }
-  .histoire-step[data-img="1"]::before { background-image: url('../images/sante-visuelle.png'); }
-  .histoire-step[data-img="2"]::before { background-image: url('../images/lentille-de-nuit.png'); }
-  .histoire-step[data-img="3"]::before { background-image: url('../images/basse-vision.png'); }
+  .histoire-step[data-img="0"]::before { background-image: url('../images/notre-histoire.webp'); }
+  .histoire-step[data-img="1"]::before { background-image: url('../images/sante-visuelle.webp'); }
+  .histoire-step[data-img="2"]::before { background-image: url('../images/lentille-de-nuit.webp'); }
+  .histoire-step[data-img="3"]::before { background-image: url('../images/basse-vision.webp'); }
 
   .step-body { position: relative; z-index: 1; width: 100%; }
 
@@ -1565,4 +1567,27 @@ a.contact-value:hover { opacity: 0.6; }
   .service-hero-content { padding: 0 24px 40px; }
 
   .service-cta { flex-direction: column; align-items: flex-start; }
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   SCROLL REVEAL
+══════════════════════════════════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+.reveal-d1 { transition-delay: 0.10s; }
+.reveal-d2 { transition-delay: 0.20s; }
+.reveal-d3 { transition-delay: 0.30s; }
+.reveal-d4 { transition-delay: 0.40s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
 }
