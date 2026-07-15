@@ -744,6 +744,42 @@ a.contact-value:hover { opacity: 0.6; }
 
 
 /* ── ACCÈS TRANSPORT ───────────────────────────────────────── */
+/* ── ACCORDÉON ACCÈS ───────────────────────────────────────── */
+.acces-accordion {
+  border: none;
+}
+
+.acces-accordion[open] .acces-chevron {
+  transform: rotate(180deg);
+}
+
+.acces-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.acces-summary::-webkit-details-marker { display: none; }
+
+.acces-summary .contact-label {
+  pointer-events: none;
+}
+
+.acces-chevron {
+  width: 16px;
+  height: 16px;
+  color: var(--mid);
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.acces-body-wrapper {
+  padding-top: 12px;
+}
+
 .acces-intro {
   font-size: 13px;
   font-weight: 300;
