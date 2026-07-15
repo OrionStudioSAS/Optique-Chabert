@@ -47,8 +47,8 @@
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 43.7102,
-      "longitude": 7.2618
+      "latitude": 43.7012,
+      "longitude": 7.2871
     },
     "openingHoursSpecification": [
       { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday"], "opens": "09:30", "closes": "19:00" },
@@ -87,7 +87,7 @@
     <a href="/" class="header-logo" aria-label="Optique Chabert — accueil">
       <picture>
         <source srcset="assets/images/logo-header.webp" type="image/webp">
-        <img src="assets/images/logo-header.png" alt="Optique Chabert" width="160" height="40">
+        <img src="assets/images/logo-header.png" alt="Optique Chabert">
       </picture>
     </a>
 
@@ -172,7 +172,7 @@
     <div class="hero-logo" aria-hidden="true">
       <picture>
         <source srcset="assets/images/logo.webp" type="image/webp">
-        <img src="assets/images/logo.png" alt="" width="320" height="160">
+        <img src="assets/images/logo.png" alt="">
       </picture>
     </div>
 
@@ -465,7 +465,7 @@
       if (!mapEl) return;
 
       const map = L.map('leaflet-map', {
-        center: [43.7102, 7.2618],
+        center: [43.7012, 7.2871],
         zoom: 16,
         zoomControl: false,
         scrollWheelZoom: false,
@@ -486,7 +486,7 @@
         iconAnchor: [7, 7],
       });
 
-      L.marker([43.7102, 7.2618], { icon })
+      L.marker([43.7012, 7.2871], { icon })
         .addTo(map)
         .bindPopup('<strong>Optique Chabert</strong><br>28 Rue Arson, Nice')
         .openPopup();
